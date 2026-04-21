@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChuckJokesVue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app" class="container">
+        <h1>Chuck Norris Facts</h1>
+        <p class="subtitle">La verdad absoluta en una lista</p>
+        
+        <ul class="joke-list">
+            <li v-for="(item, index) in chuck" :key="index" class="joke-item">
+                <span class="joke-icon">👊</span>
+                {{ item.value }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                chuck: [ 
+                    { "value": "Chuck Norris can skydive into outer space." }, 
+                    { "value": "The chief export of Chuck Norris is pain." }, 
+                    { "value": "Chuck Norris doesn't read books. He stares them down until he gets the information he wants." }, 
+                    { "value": "Time waits for no man. Unless that man is Chuck Norris." }, 
+                    { "value": "If you spell Chuck Norris in Scrabble, you win. Forever." }
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
